@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Initial project setup with Gradle, Kotlin, and base MVC structure">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Cell.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Grid.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/RoundedPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/RoundedPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Interface" />
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -43,6 +54,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="33zL1W1re0EPsZgiE8wXvLFuldY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -98,8 +112,17 @@
       <workItem from="1760318364203" duration="142000" />
       <workItem from="1760318520841" duration="7499000" />
       <workItem from="1760449670282" duration="2675000" />
-      <workItem from="1760452382379" duration="1262000" />
+      <workItem from="1760452382379" duration="3992000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
+      <option name="closed" value="true" />
+      <created>1760458548039</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760458548039</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,5 +138,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial project setup with Gradle, Kotlin, and base MVC structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial project setup with Gradle, Kotlin, and base MVC structure" />
   </component>
 </project>

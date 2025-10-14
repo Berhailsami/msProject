@@ -7,8 +7,8 @@ import java.awt.RenderingHints
 import javax.swing.JPanel
 
 /**
- * Un JPanel personnalisé qui se dessine avec des coins arrondis.
- * @param cornerRadius Le rayon des coins.
+ * A custom JPanel that draws itself with rounded corners.
+ * @param cornerRadius The radius of the corners.
  */
 open class RoundedPanel(private val cornerRadius: Int) : JPanel() {
 
@@ -19,18 +19,27 @@ open class RoundedPanel(private val cornerRadius: Int) : JPanel() {
     override fun paintComponent(graphics: Graphics) {
         super.paintComponent(graphics)
 
-        // On utilise Graphics2D pour de meilleures options de dessin (comme l'anti-aliasing)
+        // We use Graphics2D for better drawing options (like anti-aliasing).
         val g2d = graphics as Graphics2D
 
-        // Active l'anti-aliasing pour des bords lisses
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
+        // Enable anti-aliasing for smooth edges.
+        g2d.setRenderingHint(
+            RenderingHints.KEY_ANTIALIASING,
+            RenderingHints.VALUE_ANTIALIAS_ON
+        )
 
-        // Définit la couleur de fond du panel
         g2d.color = background
 
-        // Dessine un rectangle avec des coins arrondis qui remplit le panel
-        // Le width et height sont les dimensions du panel
-        // cornerRadius * 2 est utilisé pour les arcs de cercle des coins
-        g2d.fillRoundRect(0, 0, width, height, cornerRadius * 2, cornerRadius * 2)
+        // Draw a rectangle with rounded corners that fills the panel.
+        // The width and height are the dimensions of the panel.
+        // cornerRadius * 2 is used for the corner arcs.
+        g2d.fillRoundRect(
+            0,
+            0,
+            width,
+            height,
+            cornerRadius * 2,
+            cornerRadius * 2
+        )
     }
 }

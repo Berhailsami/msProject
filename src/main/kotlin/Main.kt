@@ -1,6 +1,6 @@
 package org.example
 
-import org.example.presentation.common.MainController
+import org.example.presentation.common.main_frame.controller.MainController
 import org.example.presentation.common.main_frame.model.NavigationModel
 import org.example.presentation.common.main_frame.view.MainFrame
 import javax.swing.SwingUtilities
