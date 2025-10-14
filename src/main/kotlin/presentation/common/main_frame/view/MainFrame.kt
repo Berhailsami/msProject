@@ -1,0 +1,52 @@
+package org.example.presentation.common.main_frame.view
+
+import org.example.feature.game_of_life.presentation.view.GameOfLifeView
+import org.example.presentation.common.main_frame.model.NavigationListener
+import org.example.presentation.common.main_panel.view.MainContentView
+import org.example.presentation.common.side_panel.view.SidePanelView
+import java.awt.BorderLayout
+import java.awt.Color
+import javax.swing.BorderFactory
+import javax.swing.JFrame
+import javax.swing.JPanel
+import javax.swing.SwingUtilities
+
+class MainFrame : JFrame(), NavigationListener {
+
+    //--- Expose child views so the Controller can access them ---
+    val sidePanelView = SidePanelView()
+    val mainContentView = MainContentView()
+
+    init {
+        title = "msProject"
+        defaultCloseOperation = EXIT_ON_CLOSE
+        setSize(
+            800,
+            600
+        )
+        setLocationRelativeTo(null)
+        layout = BorderLayout(
+            10,
+            10
+        )
+        isResizable = true
+        contentPane.background = Color.decode("#EDF6FF")
+        (contentPane as JPanel).border = BorderFactory
+            .createEmptyBorder(
+                10,
+                10,
+                10,
+                10
+            )
+
+        add(sidePanelView, BorderLayout.WEST)
+        add(mainContentView, BorderLayout.CENTER)
+    }
+
+    //--- This method is called by the Model when the active screen changes ---
+    override fun onScreenChanged(screenName: String) {
+        SwingUtilities.invokeLater {
+            mainContentView.showPanel(screenName)
+        }
+    }
+}
