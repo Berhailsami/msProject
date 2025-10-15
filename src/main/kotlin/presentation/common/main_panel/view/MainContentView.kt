@@ -1,5 +1,8 @@
 package org.example.presentation.common.main_panel.view
 
+import org.example.feature.game_of_life.presentation.controller.GameOfLifeController
+import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
+import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 import org.example.presentation.common.RoundedPanel
 import java.awt.CardLayout
 import java.awt.Color
@@ -7,6 +10,7 @@ import javax.swing.JPanel
 
 class MainContentView : RoundedPanel(15) {
     private val cardLayout = CardLayout()
+
     init {
         background = Color.WHITE
         layout = cardLayout

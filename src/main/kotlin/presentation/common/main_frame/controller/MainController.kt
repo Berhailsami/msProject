@@ -12,22 +12,17 @@ class MainController(
         //--- Register the view to listen for model changes ---
         navigationModel.addListener(mainFrame)
 
-        //--- Add screens to the main content view ---
-        mainFrame.mainContentView.addPanel(GameOfLifeView(), "GameOfLife")
-        mainFrame.mainContentView.addPanel(JPanel(), "AnotherScreen") // Placeholder
-
         //--- Set up listeners for user actions (button clicks) ---
         mainFrame.sidePanelView.gameOfLifeButton.addActionListener {
             //--- When clicked, tell the MODEL to update ---
             navigationModel.setActiveScreen("GameOfLife")
         }
 
-        mainFrame.sidePanelView.anotherScreenButton.addActionListener {
-            //--- When clicked, tell the MODEL to update ---
-            navigationModel.setActiveScreen("AnotherScreen")
-        }
-
         //--- Set the initial state ---
         navigationModel.setActiveScreen("GameOfLife")
+    }
+
+    fun addFeaturePanel(panel: JPanel,name: String){
+        mainFrame.mainContentView.addPanel(panel,name)
     }
 }

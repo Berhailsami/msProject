@@ -1,5 +1,7 @@
 package org.example.presentation.common.main_frame.view
 
+import org.example.feature.game_of_life.presentation.controller.GameOfLifeController
+import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
 import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 import org.example.presentation.common.main_frame.model.NavigationListener
 import org.example.presentation.common.main_panel.view.MainContentView
@@ -18,11 +20,12 @@ class MainFrame : JFrame(), NavigationListener {
     val mainContentView = MainContentView()
 
     init {
+
         title = "msProject"
         defaultCloseOperation = EXIT_ON_CLOSE
         setSize(
-            800,
-            600
+            1400,
+            800
         )
         setLocationRelativeTo(null)
         layout = BorderLayout(
@@ -30,7 +33,7 @@ class MainFrame : JFrame(), NavigationListener {
             10
         )
         isResizable = true
-        contentPane.background = Color.decode("#EDF6FF")
+        contentPane.background = Color.decode("#D8E5F2")
         (contentPane as JPanel).border = BorderFactory
             .createEmptyBorder(
                 10,

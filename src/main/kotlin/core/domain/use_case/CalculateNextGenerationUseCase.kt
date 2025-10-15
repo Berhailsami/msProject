@@ -7,6 +7,6 @@ class CalculateNextGenerationUseCase {
     fun invoke(currentGrid: Grid): Grid {
         val newCells = mutableListOf<Cell>()
         //TODO: implement the logic to calculate the next generation of the grid
-        return Grid(currentGrid.height, currentGrid.width, newCells)
+        return Grid(currentGrid.columns, currentGrid.rows, newCells)
     }
 }

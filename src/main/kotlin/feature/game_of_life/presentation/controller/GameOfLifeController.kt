@@ -7,11 +7,12 @@ import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 class GameOfLifeController(
     private val gameOfLifeModel: GameOfLifeModel,
     private val gameOfLifeView: GameOfLifeView,
-    private val calculateNextGenerationUseCase: CalculateNextGenerationUseCase
+    private val calculateNextGenerationUseCase : CalculateNextGenerationUseCase = CalculateNextGenerationUseCase()
 ) {
     fun init() {
         gameOfLifeModel.addListener(gameOfLifeView)
-        //TODO: add action listeners to the view
+        val initialGrid = gameOfLifeModel.grid
+        gameOfLifeModel.setGrid(initialGrid)
     }
 
 }
