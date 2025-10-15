@@ -18,10 +18,13 @@ fun main() {
         val mainController = MainController(navigationModel, mainFrame)
         mainController.init()
 
-        //--- Build the game of life model ---
-        val gameOfLifeView = GameOfLifeView()
+        //--- Build the game of life model (GOL)---
         val gameOfLifeModel = GameOfLifeModel()
-        val gameOfLifeController = GameOfLifeController(gameOfLifeModel,gameOfLifeView)
+        val gameOfLifeController = GameOfLifeController(gameOfLifeModel)
+        val gameOfLifeView = GameOfLifeView{ row, col ->
+            gameOfLifeController.onCellClicked(row, col)
+        }
+        gameOfLifeController.setView(gameOfLifeView)
         gameOfLifeController.init()
 
         //--- Connect the features to the main frame ---

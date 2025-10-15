@@ -1,65 +1,35 @@
 package org.example.feature.game_of_life.presentation.view
 
-import org.example.core.domain.model.Grid
-import org.example.feature.game_of_life.presentation.model.GameOfLifeListener
-import org.example.presentation.common.RoundedPanel
-import java.awt.Color
-import java.awt.Dimension
-import java.awt.Graphics
-import javax.swing.SwingUtilities
+import java.awt.BorderLayout
+import java.awt.GridBagConstraints
+import java.awt.GridBagLayout
+import javax.swing.JPanel
 
-class GameOfLifeView : RoundedPanel(15), GameOfLifeListener {
-    private var grid: Grid? = null
-    private val cellSize = 20
+class GameOfLifeView(
+    onCellClicked: (row: Int, col: Int) -> Unit
+) : JPanel() {
+
+    val gridView = GridView()
+    val testView = TestView()
 
     init {
-        this.background = Color.WHITE
-    }
+        layout = GridBagLayout()
+        isOpaque = false
+        val gbc = GridBagConstraints()
 
-    override fun getPreferredSize(): Dimension {
-        grid?.let {
-            val width = it.columns * cellSize
-            val height = it.rows * cellSize
-            return Dimension(width, height)
-        }
-        return super.getPreferredSize()
-    }
+        gbc.gridx = 0
+        gbc.gridy = 0
+        gbc.weightx = 1.0
+        gbc.weighty = 0.0
+        gbc.anchor = GridBagConstraints.NORTH
+        gbc.fill = GridBagConstraints.HORIZONTAL
+        add(testView, gbc)
 
-    override fun onGridUpdated(grid: Grid) {
-        SwingUtilities.invokeLater {
-            this.grid = grid
-            this.revalidate()
-            this.repaint()
-        }
-    }
-
-    override fun paintComponent(graphics: Graphics) {
-        super.paintComponent(graphics)
-
-        val currentGrid = grid ?: return
-
-        // 3. The drawing logic now uses the fixed cellSize.
-        currentGrid.cells.forEach { cell ->
-            if (cell.isAlive) {
-                graphics.color = Color.GREEN
-            } else {
-                graphics.color = Color.LIGHT_GRAY
-            }
-            // Use the fixed cell size for drawing the rectangle
-            graphics.fillRect(
-                cell.x * cellSize,
-                cell.y * cellSize,
-                cellSize,
-                cellSize
-            )
-            // Optionally draw an outline for each cell
-            graphics.color = Color.decode("#dcdcdc") // A slightly darker gray
-            graphics.drawRect(
-                cell.x * cellSize,
-                cell.y * cellSize,
-                cellSize,
-                cellSize
-            )
-        }
+        gbc.gridy = 1
+        gbc.weightx = 0.0
+        gbc.weighty = 0.0
+        gbc.anchor = GridBagConstraints.CENTER
+        gbc.fill = GridBagConstraints.NONE
+        add(gridView, gbc)
     }
 }

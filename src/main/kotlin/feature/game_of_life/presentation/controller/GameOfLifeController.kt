@@ -6,13 +6,25 @@ import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 
 class GameOfLifeController(
     private val gameOfLifeModel: GameOfLifeModel,
-    private val gameOfLifeView: GameOfLifeView,
     private val calculateNextGenerationUseCase : CalculateNextGenerationUseCase = CalculateNextGenerationUseCase()
 ) {
+    private var gameOfLifeView: GameOfLifeView? = null
+
+    fun setView(view: GameOfLifeView) {
+        this.gameOfLifeView = view
+    }
+
     fun init() {
-        gameOfLifeModel.addListener(gameOfLifeView)
-        val initialGrid = gameOfLifeModel.grid
-        gameOfLifeModel.setGrid(initialGrid)
+        gameOfLifeView?.let { view ->
+            gameOfLifeModel.addListener(view.gridView)
+
+            val initialGrid = gameOfLifeModel.grid
+            gameOfLifeModel.setGrid(initialGrid)
+        }
+    }
+
+    fun onCellClicked(row: Int, col: Int) {
+        gameOfLifeModel.toggleCellState(row, col)
     }
 
 }

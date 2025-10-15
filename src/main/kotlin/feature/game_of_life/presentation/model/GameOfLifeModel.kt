@@ -48,4 +48,24 @@ class GameOfLifeModel {
             cells = initialCells
         )
     }
+
+    fun toggleCellState(row: Int, col: Int) {
+        val targetCell = grid.cells.find { it.y == row && it.x == col } ?: return
+
+        val updatedCells = grid.cells.map { cell ->
+            if (cell == targetCell) {
+                cell.copy(
+                    isAlive = !cell.isAlive
+                )
+            } else {
+                cell
+            }
+        }
+
+        setGrid(
+            grid.copy(
+                cells = updatedCells
+            )
+        )
+    }
 }
