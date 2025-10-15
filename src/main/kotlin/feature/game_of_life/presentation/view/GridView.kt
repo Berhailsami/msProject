@@ -6,15 +6,25 @@ import org.example.presentation.common.RoundedPanel
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.Graphics
-import java.awt.GridBagLayout
+import java.awt.event.MouseAdapter
+import java.awt.event.MouseEvent
 import javax.swing.SwingUtilities
 
-class GridView : RoundedPanel(15), GameOfLifeListener {
+class GridView(
+    private val onCellClicked: ((row: Int, col: Int) -> Unit)? = null
+) : RoundedPanel(15), GameOfLifeListener {
     private var grid: Grid? = null
     private val cellSize = 20
 
     init {
         this.background = Color.WHITE
+        addMouseListener(object : MouseAdapter() {
+            override fun mousePressed(e: MouseEvent) {
+                val col = e.x / cellSize
+                val row = e.y / cellSize
+                onCellClicked?.invoke(row, col)
+            }
+        })
     }
 
     override fun getPreferredSize(): Dimension {

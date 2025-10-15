@@ -5,8 +5,46 @@ import org.example.core.domain.model.Grid
 
 class CalculateNextGenerationUseCase {
     fun invoke(currentGrid: Grid): Grid {
-        val newCells = mutableListOf<Cell>()
-        //TODO: implement the logic to calculate the next generation of the grid
-        return Grid(currentGrid.columns, currentGrid.rows, newCells)
+        val rows = currentGrid.rows
+        val columns = currentGrid.columns
+
+        // Index current alive cells for fast lookup
+        val aliveSet = currentGrid.cells
+            .asSequence()
+            .filter { it.isAlive }
+            .map { it.x to it.y }
+            .toSet()
+
+        fun isAliveAt(x: Int, y: Int): Boolean = (x to y) in aliveSet
+
+        fun countAliveNeighbors(x: Int, y: Int): Int {
+            var count = 0
+            // Periodic boundary conditions
+            for (dy in -1..1) {
+                for (dx in -1..1) {
+                    if (dx == 0 && dy == 0) continue
+                    val nx = (x + dx + columns) % columns
+                    val ny = (y + dy + rows) % rows
+                    if (isAliveAt(nx, ny)) count++
+                }
+            }
+            return count
+        }
+
+        val nextCells = ArrayList<Cell>(rows * columns)
+        for (y in 0 until rows) {
+            for (x in 0 until columns) {
+                val alive = isAliveAt(x, y)
+                val neighbors = countAliveNeighbors(x, y)
+                val nextAlive = when {
+                    alive && (neighbors == 2 || neighbors == 3) -> true
+                    !alive && neighbors == 3 -> true
+                    else -> false
+                }
+                nextCells.add(Cell(x = x, y = y, isAlive = nextAlive))
+            }
+        }
+
+        return Grid(columns = columns, rows = rows, cells = nextCells)
     }
 }

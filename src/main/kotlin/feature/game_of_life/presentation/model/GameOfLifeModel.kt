@@ -8,13 +8,17 @@ class GameOfLifeModel {
     var grid: Grid = createEmptyGrid()
         private set
 
+    private val history = ArrayDeque<Grid>()
     private val listeners = mutableListOf<GameOfLifeListener>()
 
     fun addListener(listener: GameOfLifeListener) {
         listeners.add(listener)
     }
 
-    fun setGrid(grid: Grid) {
+    fun setGrid(grid: Grid, pushToHistory: Boolean = false) {
+        if (pushToHistory) {
+            history.addLast(this.grid)
+        }
         this.grid = grid
         notifyListeners()
     }
@@ -65,7 +69,20 @@ class GameOfLifeModel {
         setGrid(
             grid.copy(
                 cells = updatedCells
-            )
+            ),
+            pushToHistory = true
         )
+    }
+
+    fun reset() {
+        history.clear()
+        setGrid(createEmptyGrid())
+    }
+
+    fun stepBack() {
+        if (history.isNotEmpty()) {
+            val previous = history.removeLast()
+            setGrid(previous)
+        }
     }
 }

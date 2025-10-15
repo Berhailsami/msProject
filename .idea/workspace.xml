@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Integrate &quot;Game of Life&quot; feature into MVC structure: added models, controllers, views, and improved grid rendering logic.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/TestView.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/TestView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/ControlsView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +112,8 @@
       <workItem from="1760449670282" duration="2675000" />
       <workItem from="1760452382379" duration="5878000" />
       <workItem from="1760465177741" duration="2818000" />
-      <workItem from="1760482651718" duration="7735000" />
+      <workItem from="1760482651718" duration="8466000" />
+      <workItem from="1760550348745" duration="2665000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -139,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760487100306</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView.">
+      <option name="closed" value="true" />
+      <created>1760490495024</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760490495024</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +168,7 @@
     <MESSAGE value="Initial project setup with Gradle, Kotlin, and base MVC structure" />
     <MESSAGE value="Add core domain models and initial use case for Game of Life logic" />
     <MESSAGE value="Integrate &quot;Game of Life&quot; feature into MVC structure: added models, controllers, views, and improved grid rendering logic." />
-    <option name="LAST_COMMIT_MESSAGE" value="Integrate &quot;Game of Life&quot; feature into MVC structure: added models, controllers, views, and improved grid rendering logic." />
+    <MESSAGE value="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView." />
   </component>
 </project>

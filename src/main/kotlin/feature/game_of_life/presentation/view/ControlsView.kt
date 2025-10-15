@@ -4,10 +4,11 @@ import org.example.presentation.common.RoundedPanel
 import java.awt.FlowLayout
 import javax.swing.JButton
 
-class TestView : RoundedPanel(15){
+class ControlsView : RoundedPanel(15){
     val startButton = JButton("Start")
     val stopButton = JButton("Stop")
     val stepButton = JButton("Step")
+    val backButton = JButton("Back")
     val resetButton = JButton("Reset")
 
     init {
@@ -17,6 +18,7 @@ class TestView : RoundedPanel(15){
         add(startButton)
         add(stopButton)
         add(stepButton)
+        add(backButton)
         add(resetButton)
     }
 }

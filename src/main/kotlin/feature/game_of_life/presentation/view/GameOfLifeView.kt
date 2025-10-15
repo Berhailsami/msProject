@@ -1,6 +1,5 @@
 package org.example.feature.game_of_life.presentation.view
 
-import java.awt.BorderLayout
 import java.awt.GridBagConstraints
 import java.awt.GridBagLayout
 import javax.swing.JPanel
@@ -9,8 +8,8 @@ class GameOfLifeView(
     onCellClicked: (row: Int, col: Int) -> Unit
 ) : JPanel() {
 
-    val gridView = GridView()
-    val testView = TestView()
+    val gridView = GridView(onCellClicked)
+    val controlsView = ControlsView()
 
     init {
         layout = GridBagLayout()
@@ -23,7 +22,7 @@ class GameOfLifeView(
         gbc.weighty = 0.0
         gbc.anchor = GridBagConstraints.NORTH
         gbc.fill = GridBagConstraints.HORIZONTAL
-        add(testView, gbc)
+        add(controlsView, gbc)
 
         gbc.gridy = 1
         gbc.weightx = 0.0
