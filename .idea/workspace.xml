@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView.">
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/ControlsView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/TestView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/ControlsView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +72,8 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -113,7 +110,8 @@
       <workItem from="1760452382379" duration="5878000" />
       <workItem from="1760465177741" duration="2818000" />
       <workItem from="1760482651718" duration="8466000" />
-      <workItem from="1760550348745" duration="2665000" />
+      <workItem from="1760550348745" duration="3723000" />
+      <workItem from="1760568733937" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -147,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760490495024</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control.">
+      <option name="closed" value="true" />
+      <created>1760553349149</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760553349149</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +175,7 @@
     <MESSAGE value="Add core domain models and initial use case for Game of Life logic" />
     <MESSAGE value="Integrate &quot;Game of Life&quot; feature into MVC structure: added models, controllers, views, and improved grid rendering logic." />
     <MESSAGE value="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView." />
+    <MESSAGE value="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control." />
   </component>
 </project>

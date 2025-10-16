@@ -12,7 +12,7 @@ class ControlsView : RoundedPanel(15){
     val resetButton = JButton("Reset")
 
     init {
-        // A simple layout to arrange buttons in a row
+
         layout = FlowLayout(FlowLayout.CENTER)
 
         add(startButton)

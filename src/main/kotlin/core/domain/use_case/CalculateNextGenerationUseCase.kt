@@ -8,7 +8,6 @@ class CalculateNextGenerationUseCase {
         val rows = currentGrid.rows
         val columns = currentGrid.columns
 
-        // Index current alive cells for fast lookup
         val aliveSet = currentGrid.cells
             .asSequence()
             .filter { it.isAlive }
