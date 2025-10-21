@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Refactor &quot;Game of Life&quot; view layouts: adjust constraints for dynamic resizing and improve component alignment.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments.">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,7 @@
       <workItem from="1760550348745" duration="3723000" />
       <workItem from="1760568733937" duration="2685000" />
       <workItem from="1760641872764" duration="178000" />
-      <workItem from="1760968934724" duration="8292000" />
+      <workItem from="1760968934724" duration="8314000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -163,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760602850516</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments.">
+      <option name="closed" value="true" />
+      <created>1761071745788</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761071745788</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +192,7 @@
     <MESSAGE value="Refactor &quot;Game of Life&quot; implementation: decouple view and controller, add cell toggle logic, and split GridView from GameOfLifeView." />
     <MESSAGE value="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control." />
     <MESSAGE value="Refactor &quot;Game of Life&quot; view layouts: adjust constraints for dynamic resizing and improve component alignment." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor &quot;Game of Life&quot; view layouts: adjust constraints for dynamic resizing and improve component alignment." />
+    <MESSAGE value="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments." />
   </component>
 </project>

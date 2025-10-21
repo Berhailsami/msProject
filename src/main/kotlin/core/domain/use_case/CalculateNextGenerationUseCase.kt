@@ -36,10 +36,8 @@ class CalculateNextGenerationUseCase {
                 val alive = isAliveAt(x, y)
                 val neighbors = countAliveNeighbors(x, y)
                 val nextAlive = when {
-                    /*alive && (neighbors == 2 || neighbors == 3) -> true
-                    !alive && neighbors == 3 -> true*/
-                    alive && (neighbors == 3) -> true
-                    !alive && (neighbors == 2 || neighbors == 3) -> true
+                    alive && (neighbors == 2 || neighbors == 3) -> true
+                    !alive && neighbors == 3 -> true
                     else -> false
                 }
                 nextCells.add(Cell(x = x, y = y, isAlive = nextAlive))
