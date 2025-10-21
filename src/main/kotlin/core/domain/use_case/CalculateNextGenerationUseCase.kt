@@ -22,8 +22,8 @@ class CalculateNextGenerationUseCase {
             for (dy in -1..1) {
                 for (dx in -1..1) {
                     if (dx == 0 && dy == 0) continue
-                    val nx = (x + dx + columns) % columns
-                    val ny = (y + dy + rows) % rows
+                    val nx = (x + dx).mod(columns)
+                    val ny = (y + dy).mod(rows)
                     if (isAliveAt(nx, ny)) count++
                 }
             }
@@ -36,8 +36,10 @@ class CalculateNextGenerationUseCase {
                 val alive = isAliveAt(x, y)
                 val neighbors = countAliveNeighbors(x, y)
                 val nextAlive = when {
-                    alive && (neighbors == 2 || neighbors == 3) -> true
-                    !alive && neighbors == 3 -> true
+                    /*alive && (neighbors == 2 || neighbors == 3) -> true
+                    !alive && neighbors == 3 -> true*/
+                    alive && (neighbors == 3) -> true
+                    !alive && (neighbors == 2 || neighbors == 3) -> true
                     else -> false
                 }
                 nextCells.add(Cell(x = x, y = y, isAlive = nextAlive))

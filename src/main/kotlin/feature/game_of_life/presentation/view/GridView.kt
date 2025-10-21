@@ -62,7 +62,7 @@ class GridView(
                 cellSize,
                 cellSize
             )
-            graphics.color = Color.decode("#dcdcdc") // A slightly darker gray
+            graphics.color = Color.decode("#dcdcdc")
             graphics.drawRect(
                 cell.x * cellSize,
                 cell.y * cellSize,

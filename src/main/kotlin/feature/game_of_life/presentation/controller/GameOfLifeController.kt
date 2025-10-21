@@ -41,7 +41,7 @@ class GameOfLifeController(
         if (isRunning) return
         isRunning = true
         if (timer == null) {
-            timer = Timer(150) { step() }
+            timer = Timer(100) { step() }
         }
         timer?.start()
     }
