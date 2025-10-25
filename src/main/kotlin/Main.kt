@@ -1,5 +1,7 @@
 package org.example
 
+import org.example.feature.dog_flea.presentation.model.DogFleaModel
+import org.example.feature.dog_flea.presentation.view.DogFleaView
 import org.example.feature.game_of_life.presentation.controller.GameOfLifeController
 import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
 import org.example.feature.game_of_life.presentation.view.GameOfLifeView
@@ -8,27 +10,29 @@ import org.example.presentation.common.main_frame.model.NavigationModel
 import org.example.presentation.common.main_frame.view.MainFrame
 import javax.swing.SwingUtilities
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     SwingUtilities.invokeLater {
-        //--- Build the main navigation model ---
+        //--- Main navigation ---
         val navigationModel = NavigationModel()
         val mainFrame = MainFrame()
         val mainController = MainController(navigationModel, mainFrame)
         mainController.init()
 
-        //--- Build the game of life model (GOL)---
+        //--- Game of Life ---
         val gameOfLifeModel = GameOfLifeModel()
-        val gameOfLifeController = GameOfLifeController(gameOfLifeModel)
-        val gameOfLifeView = GameOfLifeView{ row, col ->
-            gameOfLifeController.onCellClicked(row, col)
-        }
-        gameOfLifeController.setView(gameOfLifeView)
-        gameOfLifeController.init()
+        val gameOfLifeView = GameOfLifeView()
+        val gameOfLifeController = GameOfLifeController(
+            model = gameOfLifeModel,
+            view = gameOfLifeView
+        )
 
-        //--- Connect the features to the main frame ---
-        mainController.addFeaturePanel(gameOfLifeView,"Game of Life")
+        //--- Dog Flea ---
+        val dogFleaModel = DogFleaModel()
+        val dogFleaView = DogFleaView()
+
+        //--- Connect features to main frame ---
+        mainController.addFeaturePanel(gameOfLifeView, "GameOfLife")
+        mainController.addFeaturePanel(dogFleaView, "DogFlea")
 
         mainFrame.isVisible = true
     }

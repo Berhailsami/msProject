@@ -1,7 +1,7 @@
 package org.example.feature.game_of_life.presentation.model
 
-import org.example.core.domain.model.Cell
-import org.example.core.domain.model.Grid
+import org.example.core.domain.model.game_of_life.Cell
+import org.example.core.domain.model.game_of_life.Grid
 
 class GameOfLifeModel {
 

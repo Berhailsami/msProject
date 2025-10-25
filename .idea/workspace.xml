@@ -4,8 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments.">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules.">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Dog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Generation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/ControlsView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeControls.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Cell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/game_of_life/Cell.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Grid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/game_of_life/Grid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/GameOfLifeUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +41,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Data Class" />
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -52,37 +74,38 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build msProject.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.msProject [:org.example.MainKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build msProject.executor": "Run",
+    "Gradle.msProject [:org.example.MainKt.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
-      <recent name="org.example.presentation.common.main_frame.view" />
       <recent name="org.example.feature.game_of_life.presentation.model" />
+      <recent name="org.example.core.domain.model.game_of_life" />
+      <recent name="org.example.presentation.common.main_frame.view" />
       <recent name="org.example.presentation.common" />
       <recent name="org.example.presentation" />
-      <recent name="org.example.feature.presentation.common" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -110,7 +133,8 @@
       <workItem from="1760550348745" duration="3723000" />
       <workItem from="1760568733937" duration="2685000" />
       <workItem from="1760641872764" duration="178000" />
-      <workItem from="1760968934724" duration="8314000" />
+      <workItem from="1760968934724" duration="9105000" />
+      <workItem from="1761405548422" duration="5600000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -168,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761071745788</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules.">
+      <option name="closed" value="true" />
+      <created>1761071776235</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761071776235</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +225,7 @@
     <MESSAGE value="Enhance &quot;Game of Life&quot; controller and model: add history tracking, undo/redo functionality, and interactive controls for simulation control." />
     <MESSAGE value="Refactor &quot;Game of Life&quot; view layouts: adjust constraints for dynamic resizing and improve component alignment." />
     <MESSAGE value="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments." />
+    <MESSAGE value="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules." />
   </component>
 </project>

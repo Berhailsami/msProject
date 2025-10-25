@@ -1,9 +1,9 @@
 package org.example.core.domain.use_case
 
-import org.example.core.domain.model.Cell
-import org.example.core.domain.model.Grid
+import org.example.core.domain.model.game_of_life.Cell
+import org.example.core.domain.model.game_of_life.Grid
 
-class CalculateNextGenerationUseCase {
+class GameOfLifeUseCase {
     fun invoke(currentGrid: Grid): Grid {
         val rows = currentGrid.rows
         val columns = currentGrid.columns

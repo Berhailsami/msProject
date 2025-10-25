@@ -1,68 +1,57 @@
 package org.example.feature.game_of_life.presentation.controller
 
-import org.example.core.domain.use_case.CalculateNextGenerationUseCase
+import org.example.core.domain.use_case.GameOfLifeUseCase
+import org.example.feature.game_of_life.presentation.model.GameOfLifeControls
 import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
 import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 import javax.swing.Timer
 
 class GameOfLifeController(
-    private val gameOfLifeModel: GameOfLifeModel,
-    private val calculateNextGenerationUseCase : CalculateNextGenerationUseCase = CalculateNextGenerationUseCase()
-) {
-    private var gameOfLifeView: GameOfLifeView? = null
+    private val model: GameOfLifeModel,
+    private val view: GameOfLifeView,
+    private val useCase: GameOfLifeUseCase = GameOfLifeUseCase()
+) : GameOfLifeControls {
+
     private var timer: Timer? = null
-    private var isRunning: Boolean = false
+    private var isRunning = false
 
-    fun setView(view: GameOfLifeView) {
-        this.gameOfLifeView = view
+    init {
+        view.setControls(this)
+
+        model.addListener(view.gridView)
+
+        model.setGrid(model.grid)
     }
 
-    fun init() {
-        gameOfLifeView?.let { view ->
-            gameOfLifeModel.addListener(view.gridView)
-
-            val initialGrid = gameOfLifeModel.grid
-            gameOfLifeModel.setGrid(initialGrid)
-
-            // Wire controls
-            view.controlsView.startButton.addActionListener { start() }
-            view.controlsView.stopButton.addActionListener { stop() }
-            view.controlsView.stepButton.addActionListener { step() }
-            view.controlsView.backButton.addActionListener { back() }
-            view.controlsView.resetButton.addActionListener { reset() }
-        }
-    }
-
-    fun onCellClicked(row: Int, col: Int) {
-        gameOfLifeModel.toggleCellState(row, col)
-    }
-
-    private fun start() {
+    override fun onStartClicked() {
         if (isRunning) return
         isRunning = true
         if (timer == null) {
-            timer = Timer(100) { step() }
+            timer = Timer(100) { onStepClicked() }
         }
         timer?.start()
     }
 
-    private fun step() {
-        val next = calculateNextGenerationUseCase.invoke(gameOfLifeModel.grid)
-        gameOfLifeModel.setGrid(next, pushToHistory = true)
-    }
-
-    private fun stop() {
+    override fun onStopClicked() {
         isRunning = false
         timer?.stop()
     }
 
-    private fun back() {
-        gameOfLifeModel.stepBack()
+    override fun onStepClicked() {
+        val next = useCase.invoke(model.grid)
+        model.setGrid(next, pushToHistory = true)
     }
 
-    private fun reset() {
-        stop()
-        gameOfLifeModel.reset()
+    override fun onBackClicked() {
+        model.stepBack()
     }
 
+    override fun onResetClicked() {
+        onStopClicked()
+        model.reset()
+    }
+
+    override fun onCellClicked(row: Int, col: Int) {
+        model.toggleCellState(row, col)
+    }
 }

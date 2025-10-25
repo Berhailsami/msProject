@@ -18,6 +18,11 @@ class MainController(
             navigationModel.setActiveScreen("GameOfLife")
         }
 
+        mainFrame.sidePanelView.dogFleaButton.addActionListener {
+            //--- When clicked, tell the MODEL to update ---
+            navigationModel.setActiveScreen("DogFlea")
+        }
+
         //--- Set the initial state ---
         navigationModel.setActiveScreen("GameOfLife")
     }

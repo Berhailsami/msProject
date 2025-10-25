@@ -1,6 +1,6 @@
 package org.example.feature.game_of_life.presentation.view
 
-import org.example.core.domain.model.Grid
+import org.example.core.domain.model.game_of_life.Grid
 import org.example.feature.game_of_life.presentation.model.GameOfLifeListener
 import org.example.presentation.common.RoundedPanel
 import java.awt.Color
@@ -10,18 +10,19 @@ import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
 import javax.swing.SwingUtilities
 
-class GridView(
-    private val onCellClicked: ((row: Int, col: Int) -> Unit)? = null
-) : RoundedPanel(15), GameOfLifeListener {
+class GridView : RoundedPanel(15), GameOfLifeListener {
     private var grid: Grid? = null
     private val cellSize = 20
+    var onCellClicked: ((row: Int, col: Int) -> Unit)? = null
+
 
     init {
         this.background = Color.WHITE
         addMouseListener(object : MouseAdapter() {
-            override fun mousePressed(e: MouseEvent) {
-                val col = e.x / cellSize
+            override fun mouseClicked(e: MouseEvent) {
+                val cellSize = 20
                 val row = e.y / cellSize
+                val col = e.x / cellSize
                 onCellClicked?.invoke(row, col)
             }
         })
