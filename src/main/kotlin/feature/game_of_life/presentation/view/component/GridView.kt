@@ -1,4 +1,4 @@
-package org.example.feature.game_of_life.presentation.view
+package org.example.feature.game_of_life.presentation.view.component
 
 import org.example.core.domain.model.game_of_life.Grid
 import org.example.feature.game_of_life.presentation.model.GameOfLifeListener
@@ -17,7 +17,7 @@ class GridView : RoundedPanel(15), GameOfLifeListener {
 
 
     init {
-        this.background = Color.WHITE
+        background = Color.WHITE
         addMouseListener(object : MouseAdapter() {
             override fun mouseClicked(e: MouseEvent) {
                 val cellSize = 20

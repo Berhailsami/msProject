@@ -1,7 +1,7 @@
 package org.example.feature.game_of_life.presentation.controller
 
 import org.example.core.domain.use_case.GameOfLifeUseCase
-import org.example.feature.game_of_life.presentation.model.GameOfLifeControls
+import org.example.feature.game_of_life.presentation.view.GameOfLifeControls
 import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
 import org.example.feature.game_of_life.presentation.view.GameOfLifeView
 import javax.swing.Timer

@@ -1,5 +1,7 @@
 package org.example
 
+import org.example.core.domain.use_case.DogFleaUseCase
+import org.example.feature.dog_flea.presentation.controller.DogFleaController
 import org.example.feature.dog_flea.presentation.model.DogFleaModel
 import org.example.feature.dog_flea.presentation.view.DogFleaView
 import org.example.feature.game_of_life.presentation.controller.GameOfLifeController
@@ -29,8 +31,12 @@ fun main() {
         //--- Dog Flea ---
         val dogFleaModel = DogFleaModel()
         val dogFleaView = DogFleaView()
+        val dogFleaController = DogFleaController(
+            model = dogFleaModel,
+            view = dogFleaView,
+        )
 
-        //--- Connect features to main frame ---
+        //--- Connect features to the main frame ---
         mainController.addFeaturePanel(gameOfLifeView, "GameOfLife")
         mainController.addFeaturePanel(dogFleaView, "DogFlea")
 

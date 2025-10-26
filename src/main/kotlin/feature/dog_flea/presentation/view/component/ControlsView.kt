@@ -1,6 +1,7 @@
-package org.example.feature.dog_flea.presentation.view
+package org.example.feature.dog_flea.presentation.view.component
 
 import org.example.presentation.common.RoundedPanel
+import java.awt.Color
 import java.awt.FlowLayout
 import javax.swing.JButton
 import javax.swing.JLabel
@@ -15,6 +16,7 @@ class ControlsView : RoundedPanel(15) {
     val resetButton = JButton("Reset")
 
     init {
+        background = Color.WHITE
         layout = FlowLayout(FlowLayout.CENTER)
 
         nFleasDogA.text = "0"

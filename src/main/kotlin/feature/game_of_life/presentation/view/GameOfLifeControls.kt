@@ -1,4 +1,4 @@
-package org.example.feature.game_of_life.presentation.model
+package org.example.feature.game_of_life.presentation.view
 
 interface GameOfLifeControls {
     fun onStartClicked()

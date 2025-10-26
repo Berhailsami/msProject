@@ -1,7 +1,9 @@
 package org.example.feature.game_of_life.presentation.view
 
-import org.example.feature.game_of_life.presentation.model.GameOfLifeControls
+import org.example.feature.game_of_life.presentation.view.component.ControlsView
+import org.example.feature.game_of_life.presentation.view.component.GridView
 import org.example.presentation.common.RoundedPanel
+import java.awt.Color
 import java.awt.GridBagConstraints
 import java.awt.GridBagLayout
 
@@ -13,7 +15,7 @@ class GameOfLifeView: RoundedPanel(15) {
 
     init {
         layout = GridBagLayout()
-        isOpaque = false
+        background = Color.WHITE
         val gbc = GridBagConstraints()
 
         gbc.gridx = 0

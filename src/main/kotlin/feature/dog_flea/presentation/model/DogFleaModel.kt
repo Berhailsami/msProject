@@ -16,7 +16,22 @@ class DogFleaModel {
         private set
 
     private val history = ArrayDeque<Generation>()
+
     fun addListener(listener: DogFleaListener) {
         listeners.add(listener)
+    }
+
+    fun notifyListeners() {
+        listeners.forEach { listener ->
+            listener.onGenerationCalculated(generation)
+        }
+    }
+
+    fun setGeneration(generation: Generation,pushToHistory: Boolean = false) {
+        if (pushToHistory){
+            history.addLast(this.generation)
+        }
+        this.generation = generation
+        notifyListeners()
     }
 }

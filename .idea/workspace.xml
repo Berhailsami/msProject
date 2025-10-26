@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Dog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Generation.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaListener.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/ControlsView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeControls.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models.">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaControls.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/DogView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeControls.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dog.com.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Cell.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/game_of_life/Cell.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/Grid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/game_of_life/Grid.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/CalculateNextGenerationUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/GameOfLifeUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ControlsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/model/GameOfLifeControls.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/component/ControlsView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GameOfLifeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/GridView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/view/component/GridView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +37,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Enum" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -100,12 +95,15 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="org.example.feature.dog_flea.presentation.view.component" />
+      <recent name="org.example.feature.game_of_life.presentation.view.component" />
+      <recent name="org.example.feature.game_of_life.presentation.view" />
+      <recent name="org.example.feature.game_of_life.presentation.controller" />
       <recent name="org.example.feature.game_of_life.presentation.model" />
-      <recent name="org.example.core.domain.model.game_of_life" />
-      <recent name="org.example.presentation.common.main_frame.view" />
-      <recent name="org.example.presentation.common" />
-      <recent name="org.example.presentation" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -134,7 +132,7 @@
       <workItem from="1760568733937" duration="2685000" />
       <workItem from="1760641872764" duration="178000" />
       <workItem from="1760968934724" duration="9105000" />
-      <workItem from="1761405548422" duration="5600000" />
+      <workItem from="1761405548422" duration="14211000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -200,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761071776235</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models.">
+      <option name="closed" value="true" />
+      <created>1761411193647</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1761411193647</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +232,7 @@
     <MESSAGE value="Refactor &quot;Game of Life&quot; view layouts: adjust constraints for dynamic resizing and improve component alignment." />
     <MESSAGE value="Adjust &quot;Game of Life&quot; timer interval, refine neighbor calculation logic, and simplify GridView cell color comments." />
     <MESSAGE value="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules." />
+    <MESSAGE value="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models." />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models." />
   </component>
 </project>
