@@ -1,11 +1,13 @@
 package org.example.feature.dog_flea.presentation.view.component
 
 import org.example.presentation.common.RoundedPanel
+import org.example.presentation.common.util.IntegerFilter
 import java.awt.Color
 import java.awt.FlowLayout
 import javax.swing.JButton
 import javax.swing.JLabel
 import javax.swing.JTextField
+import javax.swing.text.AbstractDocument
 
 class ControlsView : RoundedPanel(15) {
 
@@ -21,6 +23,10 @@ class ControlsView : RoundedPanel(15) {
 
         nFleasDogA.text = "0"
         nFleasDogB.text = "0"
+
+        // Numeric Filter for JTextField
+        (nFleasDogA.document as AbstractDocument).documentFilter = IntegerFilter()
+        (nFleasDogB.document as AbstractDocument).documentFilter = IntegerFilter()
 
         // Add components to the panel (this was missing)
         add(JLabel("Fleas on Dog A:"))

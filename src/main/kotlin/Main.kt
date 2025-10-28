@@ -1,6 +1,5 @@
 package org.example
 
-import org.example.core.domain.use_case.DogFleaUseCase
 import org.example.feature.dog_flea.presentation.controller.DogFleaController
 import org.example.feature.dog_flea.presentation.model.DogFleaModel
 import org.example.feature.dog_flea.presentation.view.DogFleaView
@@ -23,7 +22,7 @@ fun main() {
         //--- Game of Life ---
         val gameOfLifeModel = GameOfLifeModel()
         val gameOfLifeView = GameOfLifeView()
-        val gameOfLifeController = GameOfLifeController(
+        GameOfLifeController(
             model = gameOfLifeModel,
             view = gameOfLifeView
         )
@@ -31,7 +30,7 @@ fun main() {
         //--- Dog Flea ---
         val dogFleaModel = DogFleaModel()
         val dogFleaView = DogFleaView()
-        val dogFleaController = DogFleaController(
+        DogFleaController(
             model = dogFleaModel,
             view = dogFleaView,
         )

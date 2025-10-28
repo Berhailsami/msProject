@@ -12,7 +12,6 @@ import javax.swing.SwingUtilities
 
 class MainFrame : JFrame(), NavigationListener {
 
-    //--- Expose child views so the Controller can access them ---
     val sidePanelView = SidePanelView()
     val mainContentView = MainContentView()
 
@@ -24,6 +23,7 @@ class MainFrame : JFrame(), NavigationListener {
             1400,
             800
         )
+        minimumSize = size
         setLocationRelativeTo(null)
         layout = BorderLayout(
             10,

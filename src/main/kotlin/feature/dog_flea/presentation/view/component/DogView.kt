@@ -1,5 +1,6 @@
 package org.example.feature.dog_flea.presentation.view.component
 
+import org.example.core.domain.model.dog_flea.Dog
 import org.example.core.domain.model.dog_flea.Generation
 import org.example.feature.dog_flea.presentation.model.DogFleaListener
 import org.example.presentation.common.RoundedPanel
@@ -20,7 +21,7 @@ class DogView (
 
 
     private var dogImage : ImageIcon? = null
-    private val fleaCount = 10
+    private var dog : Dog = Dog(dogName,0)
     private val errorMessage = "Error loading image"
     private val scaledWidth = 450
 
@@ -55,7 +56,13 @@ class DogView (
 
     override fun onGenerationCalculated(generation: Generation) {
         SwingUtilities.invokeLater {
-            //TODO(): Implement
+            generation.dogs.forEach { dog->
+                if (dog.name == this.dog.name){
+                    this.dog = dog
+                    this.revalidate()
+                    this.repaint()
+                }
+            }
         }
     }
 
@@ -63,7 +70,6 @@ class DogView (
         super.paintComponent(g)
         val g2d = g as Graphics2D
 
-        // Enable anti-aliasing for smooth text
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON)
 
@@ -78,7 +84,7 @@ class DogView (
             g2d.font = fleaFont
             g2d.color = Color.RED
 
-            val text = fleaCount.toString()
+            val text = dog.fleasNumber.toString()
             val fm = g2d.fontMetrics
             val textWidth = fm.stringWidth(text)
             val textAscent = fm.ascent

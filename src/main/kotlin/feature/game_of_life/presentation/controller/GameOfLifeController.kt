@@ -4,6 +4,7 @@ import org.example.core.domain.use_case.GameOfLifeUseCase
 import org.example.feature.game_of_life.presentation.view.GameOfLifeControls
 import org.example.feature.game_of_life.presentation.model.GameOfLifeModel
 import org.example.feature.game_of_life.presentation.view.GameOfLifeView
+import javax.swing.SwingUtilities
 import javax.swing.Timer
 
 class GameOfLifeController(
@@ -24,34 +25,46 @@ class GameOfLifeController(
     }
 
     override fun onStartClicked() {
-        if (isRunning) return
-        isRunning = true
-        if (timer == null) {
-            timer = Timer(100) { onStepClicked() }
+        SwingUtilities.invokeLater {
+            if (isRunning) return@invokeLater
+            isRunning = true
+            if (timer == null) {
+                timer = Timer(100) { onStepClicked() }
+            }
+            timer?.start()
         }
-        timer?.start()
     }
 
     override fun onStopClicked() {
-        isRunning = false
-        timer?.stop()
+        SwingUtilities.invokeLater {
+            isRunning = false
+            timer?.stop()
+        }
     }
 
     override fun onStepClicked() {
-        val next = useCase.invoke(model.grid)
-        model.setGrid(next, pushToHistory = true)
+        SwingUtilities.invokeLater {
+            val next = useCase.invoke(model.grid)
+            model.setGrid(next, pushToHistory = true)
+        }
     }
 
     override fun onBackClicked() {
-        model.stepBack()
+        SwingUtilities.invokeLater {
+            model.stepBack()
+        }
     }
 
     override fun onResetClicked() {
-        onStopClicked()
-        model.reset()
+        SwingUtilities.invokeLater {
+            onStopClicked()
+            model.reset()
+        }
     }
 
     override fun onCellClicked(row: Int, col: Int) {
-        model.toggleCellState(row, col)
+        SwingUtilities.invokeLater {
+            model.toggleCellState(row, col)
+        }
     }
 }
