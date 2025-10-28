@@ -6,6 +6,7 @@ import org.example.feature.dog_flea.presentation.view.DogFleaControls
 import org.example.feature.dog_flea.presentation.view.DogFleaView
 import java.util.Random
 import javax.swing.SwingUtilities
+import javax.swing.Timer
 
 class DogFleaController (
     private val model: DogFleaModel,
@@ -13,12 +14,13 @@ class DogFleaController (
     private val dogFleaUseCase: DogFleaUseCase = DogFleaUseCase()
 ) : DogFleaControls{
 
+    private var goToInitialTimer: Timer? = null
+
     init {
         view.setControls(this)
         model.addListener(view.dogA)
         model.addListener(view.dogB)
         model.addListener(view.resultView)
-
     }
 
     override fun onDogFleasChanged(dogName: String, fleasNewNumber: Int) {
@@ -37,7 +39,6 @@ class DogFleaController (
                     randomNumber = randomNumber
                 )
             )
-            println("DEBUG: DogFleaController -> onStepClicked : ${newGeneration.dogs}")
             model.setGeneration(
                 newGeneration,
                 pushToHistory = true
@@ -67,6 +68,19 @@ class DogFleaController (
         SwingUtilities.invokeLater {
             model.reset()
         }
+    }
+
+    override fun onGoToInitialClicked() {
+        goToInitialTimer?.stop()
+        onStepClicked()
+        goToInitialTimer = Timer(0) {
+            if ((model.generation.dogs == model.initialState).not()) {
+                onStepClicked()
+            } else {
+                goToInitialTimer?.stop()
+            }
+        }
+        goToInitialTimer?.start()
     }
 
 }

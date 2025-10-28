@@ -17,6 +17,8 @@ class ControlsView : RoundedPanel(15) {
     val backButton = JButton("Back")
     val resetButton = JButton("Reset")
 
+    val goToInitialButton = JButton("Go to initial state")
+
     init {
         background = Color.WHITE
         layout = FlowLayout(FlowLayout.CENTER)
@@ -36,5 +38,6 @@ class ControlsView : RoundedPanel(15) {
         add(stepButton)
         add(backButton)
         add(resetButton)
+        add(goToInitialButton)
     }
 }

@@ -5,4 +5,5 @@ interface DogFleaControls {
     fun onStepClicked()
     fun onBackClicked()
     fun onResetClicked()
+    fun onGoToInitialClicked()
 }

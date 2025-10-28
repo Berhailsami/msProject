@@ -134,5 +134,6 @@ class DogFleaView : RoundedPanel(15) {
         controlsView.stepButton.addActionListener { controls?.onStepClicked() }
         controlsView.backButton.addActionListener { controls?.onBackClicked() }
         controlsView.resetButton.addActionListener { controls?.onResetClicked() }
+        controlsView.goToInitialButton.addActionListener { controls?.onGoToInitialClicked()}
     }
 }

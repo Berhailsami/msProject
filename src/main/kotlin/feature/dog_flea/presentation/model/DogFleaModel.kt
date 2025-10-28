@@ -19,6 +19,9 @@ class DogFleaModel {
     )
         private set
 
+    var initialState = listOf<Dog>()
+        private set
+
     private val history = ArrayDeque<Generation>()
 
     fun addListener(listener: DogFleaListener) {
@@ -61,6 +64,8 @@ class DogFleaModel {
 
         history.clear()
 
+        initialState = updatedDogs
+
         setGeneration(
             newGeneration,
             pushToHistory = true
@@ -69,23 +74,19 @@ class DogFleaModel {
 
     fun reset() {
         history.clear()
-        setGeneration(
-            Generation(
-                0,
-                0.0,
-                0,
-                listOf(
-                    Dog(
-                        "A",
-                        0
-                    ),
-                    Dog(
-                        "B",
-                        0
-                    )
-                )
+        val freshGeneration = Generation(
+            0,
+            0.0,
+            0,
+            listOf(
+                Dog("A", 0),
+                Dog("B", 0)
             )
         )
+        initialState = freshGeneration.dogs
+
+        setGeneration(freshGeneration)
+
     }
 
 

@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Restructure &quot;Dog Flea&quot; and &quot;Game of Life&quot; features: Adjust package structure, add MVC components, and improve view initialization.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ResultView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/util/IntegerFilter.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Dog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/dog_flea/Dog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/DogFleaUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaControls.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaControls.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ControlsView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/DogView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/DogView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/game_of_life/presentation/controller/GameOfLifeController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/view/MainFrame.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,31 +61,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build msProject.executor": "Run",
-    "Gradle.msProject [:org.example.MainKt.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build msProject.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.msProject [:org.example.MainKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -132,7 +124,8 @@
       <workItem from="1760568733937" duration="2685000" />
       <workItem from="1760641872764" duration="178000" />
       <workItem from="1760968934724" duration="9105000" />
-      <workItem from="1761405548422" duration="39479000" />
+      <workItem from="1761405548422" duration="50387000" />
+      <workItem from="1761676295238" duration="603000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -214,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761496012714</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components.">
+      <option name="closed" value="true" />
+      <created>1761614713098</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761614713098</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +243,7 @@
     <MESSAGE value="Fix neighbor calculation logic in &quot;Game of Life&quot; to respect original Conway rules." />
     <MESSAGE value="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models." />
     <MESSAGE value="Restructure &quot;Dog Flea&quot; and &quot;Game of Life&quot; features: Adjust package structure, add MVC components, and improve view initialization." />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructure &quot;Dog Flea&quot; and &quot;Game of Life&quot; features: Adjust package structure, add MVC components, and improve view initialization." />
+    <MESSAGE value="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components." />
+    <option name="LAST_COMMIT_MESSAGE" value="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components." />
   </component>
 </project>
