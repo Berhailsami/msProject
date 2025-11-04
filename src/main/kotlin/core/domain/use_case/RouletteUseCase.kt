@@ -2,20 +2,24 @@ package org.example.core.domain.use_case
 
 import org.example.core.domain.model.roulette.BallColor
 import org.example.core.domain.model.roulette.BetColor
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
+import org.example.core.domain.model.roulette.BettingStrategy
 import org.example.core.domain.model.roulette.RouletteGame
 import org.example.core.domain.model.roulette.RouletteRound
 import java.util.concurrent.ThreadLocalRandom
 
+/**
+ * Use case for simulating American Roulette
+ */
 class RouletteUseCase {
 
+    // Correctly models the numbers and colors on an American roulette wheel.
     private companion object {
         val americanWheelLayout = listOf(
             0 to BallColor.ZERO, 28 to BallColor.BLACK, 9 to BallColor.RED, 26 to BallColor.BLACK,
             30 to BallColor.RED, 11 to BallColor.BLACK, 7 to BallColor.RED, 20 to BallColor.BLACK,
             32 to BallColor.RED, 17 to BallColor.BLACK, 5 to BallColor.RED, 22 to BallColor.BLACK,
             34 to BallColor.RED, 15 to BallColor.BLACK, 3 to BallColor.RED, 24 to BallColor.BLACK,
-            36 to BallColor.RED, 13 to BallColor.BLACK, 1 to BallColor.RED, 37 to BallColor.DOUBLE_ZERO,
+            36 to BallColor.RED, 13 to BallColor.BLACK, 1 to BallColor.RED, 37 to BallColor.DOUBLE_ZERO, // 37 represents "00"
             27 to BallColor.RED, 10 to BallColor.BLACK, 25 to BallColor.RED, 29 to BallColor.BLACK,
             12 to BallColor.RED, 8 to BallColor.BLACK, 19 to BallColor.RED, 31 to BallColor.BLACK,
             18 to BallColor.RED, 6 to BallColor.BLACK, 21 to BallColor.RED, 33 to BallColor.BLACK,
@@ -23,25 +27,27 @@ class RouletteUseCase {
             14 to BallColor.RED, 2 to BallColor.BLACK
         )
     }
-
+    
+    /**
+     * Simulates one round of roulette
+     * Returns a new game state after the round
+     */
     fun invoke(
         currentGame: RouletteGame,
         betAmount: Int,
         betColor: BetColor,
+        recordRounds: Boolean = true
     ): RouletteGame {
         if (currentGame.isComplete) return currentGame
         
         if (!hasEnoughBalance(currentGame.currentBalance, betAmount)) {
-            return currentGame.copy(
-                isComplete = true,
-                success = false
-            )
+            return currentGame.copy(isComplete = true, success = false)
         }
         
         val ballColor = spinWheel()
-        val gameResult = determineIfWon(ballColor, betColor)
+        val won = determineIfWon(ballColor, betColor)
         
-        val balanceAfter = calculateNewBalance(currentGame.currentBalance, betAmount, gameResult)
+        val balanceAfter = calculateNewBalance(currentGame.currentBalance, betAmount, won)
         val totalWinnings = balanceAfter - currentGame.initialBalance
         
         val round = createRound(
@@ -51,7 +57,7 @@ class RouletteUseCase {
             ballColor = ballColor,
             balanceBefore = currentGame.currentBalance,
             balanceAfter = balanceAfter,
-            gameResult = gameResult
+            gameResult = won
         )
         
         val (isComplete, success) = checkGameCompletion(totalWinnings, currentGame.targetWinnings, balanceAfter)
@@ -59,12 +65,17 @@ class RouletteUseCase {
         return currentGame.copy(
             currentBalance = balanceAfter,
             totalWinnings = totalWinnings,
-            rounds = currentGame.rounds + round ,
+            rounds = if (recordRounds) currentGame.rounds + round else emptyList(),
             isComplete = isComplete,
             success = success
         )
     }
 
+    /**
+     * Simulates a full game from start to finish without creating intermediate states.
+     * This is optimized for performance in auto-simulation scenarios.
+     * Returns true for a successful game (target winnings reached), false otherwise.
+     */
     fun simulateFullGame(
         initialBalance: Int,
         targetWinnings: Int,
@@ -77,13 +88,13 @@ class RouletteUseCase {
         while (true) {
             val totalWinnings = currentBalance - initialBalance
             if (totalWinnings >= targetWinnings) {
-                return true
+                return true // Success
             }
 
-            val betAmount = strategy.nextBet(lastRound)
+            val betAmount = strategy.nextBet(lastRound, currentBalance, initialBalance, targetWinnings)
 
             if (currentBalance < betAmount) {
-                return false
+                return false // Failure
             }
 
             val ballColor = spinWheel()
@@ -111,7 +122,11 @@ class RouletteUseCase {
     private fun hasEnoughBalance(balance: Int, betAmount: Int): Boolean {
         return balance >= betAmount
     }
-
+    
+    /**
+     * Spins the roulette wheel and returns the color the ball lands on.
+     * This now correctly models the layout of an American roulette wheel.
+     */
     private fun spinWheel(): BallColor {
         val pocketIndex = ThreadLocalRandom.current().nextInt(americanWheelLayout.size)
         return americanWheelLayout[pocketIndex].second
@@ -126,8 +141,8 @@ class RouletteUseCase {
         }
     }
     
-    private fun calculateNewBalance(currentBalance: Int, betAmount: Int, gameResult: Boolean): Int {
-        return if (gameResult) {
+    private fun calculateNewBalance(currentBalance: Int, betAmount: Int, won: Boolean): Int {
+        return if (won) {
             currentBalance + betAmount
         } else {
             currentBalance - betAmount

@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Add &quot;Roulette&quot; feature: implement MVC components, game simulation logic, and probability calculations.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteApproximativeProbability.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="test in the lab">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/BettingStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/MartingaleBettingStrategy.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S1BettingStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S1BettingStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/RouletteControls.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/RouletteControls.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/ControlsView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +54,7 @@
 }</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14-bin/38aieal9i53h9rfe7vjup95b9/gradle-8.14" javaHome="$USER_HOME$/Library/Java/JavaVirtualMachines/jbr-21.0.8/Contents/Home" gradleVersion="8.14" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="AISelfReview" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -126,7 +133,7 @@
       <workItem from="1761676295238" duration="6852000" />
       <workItem from="1762109562143" duration="155000" />
       <workItem from="1762109727570" duration="10685000" />
-      <workItem from="1762154678895" duration="12945000" />
+      <workItem from="1762154678895" duration="14004000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -248,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762268067586</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test in the lab">
+      <option name="closed" value="true" />
+      <created>1762271958720</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762271958720</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +295,8 @@
     <MESSAGE value="Add &quot;Go to Initial State&quot; functionality in Dog Flea simulation controls" />
     <MESSAGE value="Add &quot;Roulette&quot; feature: integrate MVC components, add navigation logic, betting strategies, and probability calculation." />
     <MESSAGE value="Add &quot;Roulette&quot; feature: implement MVC components, game simulation logic, and probability calculations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Roulette&quot; feature: implement MVC components, game simulation logic, and probability calculations." />
+    <MESSAGE value="test in the lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="test in the lab" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

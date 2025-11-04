@@ -1,7 +1,7 @@
 package org.example.feature.roulette.presentation.view
 
 import org.example.core.domain.model.roulette.BetColor
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
+import org.example.core.domain.model.roulette.BettingStrategy
 
 interface RouletteControls {
     fun onInitialBalanceChanged(balance: Int)

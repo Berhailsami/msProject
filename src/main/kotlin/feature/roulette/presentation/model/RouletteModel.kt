@@ -1,7 +1,7 @@
 package org.example.feature.roulette.presentation.model
 
+import org.example.core.domain.model.roulette.BettingStrategy
 import org.example.core.domain.model.roulette.RouletteGame
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
 import org.example.core.domain.model.roulette.strategy.S1BettingStrategy
 import javax.swing.SwingUtilities
 
@@ -50,7 +50,7 @@ class RouletteModel {
             totalWinnings = 0,
             rounds = emptyList(),
             isComplete = false,
-            bettingStrategy = S1BettingStrategy()
+            bettingStrategy = game.bettingStrategy
         )
         history.clear()
         setGame(newGame)
@@ -78,7 +78,6 @@ class RouletteModel {
     }
 
     fun changeStrategy(strategy: BettingStrategy) {
-        this.game.bettingStrategy = strategy
+        this.game = this.game.copy(bettingStrategy = strategy)
     }
 }
-

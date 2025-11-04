@@ -1,9 +1,10 @@
 package org.example.feature.roulette.presentation.view.component
 
 import org.example.core.domain.model.roulette.BetColor
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
+import org.example.core.domain.model.roulette.BettingStrategy
+import org.example.core.domain.model.roulette.strategy.BoldPlayBettingStrategy
 import org.example.core.domain.model.roulette.strategy.S1BettingStrategy
-import org.example.core.domain.model.roulette.strategy.S2BettingStrategy
+import org.example.core.domain.model.roulette.strategy.MartingaleBettingStrategy
 import org.example.presentation.common.RoundedPanel
 import org.example.presentation.common.util.IntegerFilter
 import java.awt.Color
@@ -30,7 +31,7 @@ class ControlsView : RoundedPanel(15) {
     val blackBetButton = JRadioButton("Black", false)
     private val betColorGroup = ButtonGroup()
     
-    val bettingStrategyComboBox = JComboBox<String>(arrayOf("S1", "S2"))
+    val bettingStrategyComboBox = JComboBox<String>(arrayOf("S1", "Martingale", "Bold Play"))
     
     val initializeButton = JButton("Initialize Game")
     val stepButton = JButton("Step")
@@ -46,7 +47,7 @@ class ControlsView : RoundedPanel(15) {
         initialBalanceField.text = "0"
         targetWinningsField.text = "0"
         betAmountField.text = "1"
-        numSimulationsField.text = "1000"
+        numSimulationsField.text = "1000000"
         
         // Numeric filters
         (initialBalanceField.document as AbstractDocument).documentFilter = IntegerFilter()
@@ -143,11 +144,16 @@ class ControlsView : RoundedPanel(15) {
         add(resetButton, gbc)
     }
     
+    fun getBetColor(): BetColor {
+        return if (redBetButton.isSelected) BetColor.RED else BetColor.BLACK
+    }
+    
     fun getBettingStrategy(): BettingStrategy {
         val betAmount = betAmountField.text.toIntOrNull() ?: 1
         return when (bettingStrategyComboBox.selectedItem) {
             "S1" -> S1BettingStrategy(betAmount)
-            "S2" -> S2BettingStrategy(betAmount)
+            "Martingale" -> MartingaleBettingStrategy(betAmount)
+            "Bold Play" -> BoldPlayBettingStrategy()
             else -> S1BettingStrategy(betAmount)
         }
     }

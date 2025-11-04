@@ -1,6 +1,7 @@
 package org.example.feature.roulette.presentation.controller
 
 import org.example.core.domain.model.roulette.BetColor
+import org.example.core.domain.model.roulette.BettingStrategy
 import org.example.core.domain.model.roulette.strategy.S1BettingStrategy
 import org.example.core.domain.use_case.RouletteAnalyticsUseCase
 import org.example.core.domain.use_case.RouletteUseCase
@@ -8,8 +9,6 @@ import org.example.feature.roulette.presentation.model.RouletteModel
 import org.example.feature.roulette.presentation.view.RouletteControls
 import org.example.feature.roulette.presentation.view.RouletteView
 import kotlinx.coroutines.*
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
-import org.example.core.domain.use_case.RouletteApproximativeProbability
 import java.util.concurrent.atomic.LongAdder
 import javax.swing.SwingUtilities
 
@@ -17,8 +16,7 @@ class RouletteController(
     private val model: RouletteModel,
     private val view: RouletteView,
     private val rouletteUseCase: RouletteUseCase = RouletteUseCase(),
-    private val analyticsUseCase: RouletteAnalyticsUseCase = RouletteAnalyticsUseCase(),
-    private val approximAnalyticsUseCase: RouletteApproximativeProbability = RouletteApproximativeProbability()
+    private val analyticsUseCase: RouletteAnalyticsUseCase = RouletteAnalyticsUseCase()
 ) : RouletteControls {
     
     private var initialBalance: Int = 0
@@ -81,7 +79,7 @@ class RouletteController(
             }
             
             val lastRound = model.game.rounds.lastOrNull()
-            val nextBet = bettingStrategy.nextBet(lastRound)
+            val nextBet = bettingStrategy.nextBet(lastRound, model.game.currentBalance, initialBalance, targetWinnings)
 
             // If game hasn't been initialized, initialize it first
             val game = if (model.game.rounds.isEmpty()) {
@@ -108,12 +106,12 @@ class RouletteController(
     override fun onResetClicked() {
         SwingUtilities.invokeLater {
             model.reset()
-
+            bettingStrategy.reset()
         }
     }
     
     override fun onAutoSimulateClicked() {
-        val numSimulations = view.controlsView.numSimulationsField.text.toIntOrNull() ?: 1000
+        val numSimulations = view.controlsView.numSimulationsField.text.toLongOrNull() ?: 1000L
         
         if (initialBalance == 0 || targetWinnings == 0) {
             return
@@ -131,12 +129,12 @@ class RouletteController(
             // UI update job
             val uiUpdateJob = launch {
                 while (isActive) {
-                    val currentSuccessful = successful.sum().toInt()
-                    val currentFailed = failed.sum().toInt()
+                    val currentSuccessful = successful.sum()
+                    val currentFailed = failed.sum()
                     val progress = currentSuccessful + currentFailed
-                    val percentage = if (numSimulations > 0) (progress * 100) / numSimulations else 0
+                    val percentage = if (numSimulations > 0) (progress * 100L) / numSimulations else 0
 
-                    view.statisticsView.updateStatistics(currentSuccessful, currentFailed)
+                    view.statisticsView.updateStatistics(currentSuccessful.toInt(), currentFailed.toInt())
                     if (progress < numSimulations) {
                         view.controlsView.autoSimulateButton.text = "Simulating... $percentage%"
                     }
@@ -154,7 +152,7 @@ class RouletteController(
                 val tasks = (0 until numThreads).map { threadIndex ->
                     async {
                         val simsForThisThread = simulationsPerThread + if (threadIndex < remainder) 1 else 0
-                        repeat(simsForThisThread) {
+                        repeat(simsForThisThread.toInt()) {
                             if (simulateSingleGame(bettingStrategy)) {
                                 successful.increment()
                             } else {
@@ -163,7 +161,7 @@ class RouletteController(
                         }
                     }
                 }
-                tasks.awaitAll()
+                tasks.awaitAll() // Wait for all simulations to complete
             }
 
             // Wait for simulation to finish
@@ -189,12 +187,6 @@ class RouletteController(
                 targetWinnings = targetWinnings,
                 betAmount = betAmount
             )
-
-            val approximativeProbability = approximAnalyticsUseCase.calculateWinProbability(
-                initialBalance = initialBalance,
-                targetWinnings = targetWinnings,
-                betAmount = betAmount
-            )
             view.statisticsView.updateTheoreticalProbability(probability)
         } else {
             view.statisticsView.updateTheoreticalProbability(null)
@@ -206,7 +198,7 @@ class RouletteController(
      * Returns true if the game was successful (reached target), false if failed (ran out of money).
      */
     private fun simulateSingleGame(strategy: BettingStrategy): Boolean {
-
+        strategy.reset()
         return rouletteUseCase.simulateFullGame(
             initialBalance = initialBalance,
             targetWinnings = targetWinnings,

@@ -1,6 +1,6 @@
 package org.example.core.domain.model.roulette
 
-import org.example.core.domain.model.roulette.strategy.BettingStrategy
+import org.example.core.domain.model.roulette.BettingStrategy
 
 data class RouletteGame(
     val initialBalance: Int,
@@ -10,8 +10,7 @@ data class RouletteGame(
     val rounds: List<RouletteRound>,
     val isComplete: Boolean,
     val success: Boolean? = null,
-    var bettingStrategy: BettingStrategy
+    val bettingStrategy: BettingStrategy
 ) {
     val totalRounds: Int get() = rounds.size
 }
-
