@@ -59,7 +59,7 @@ class RouletteController(
 
     override fun onBettingStrategyChanged(strategy: BettingStrategy) {
         SwingUtilities.invokeLater {
-            model.changeStrategy(strategy)
+            bettingStrategy = strategy
             updateTheoreticalProbability()
         }
     }
