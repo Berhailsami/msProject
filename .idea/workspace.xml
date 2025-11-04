@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components.">
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="Add &quot;Go to Initial State&quot; functionality in Dog Flea simulation controls">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/BallColor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/BetColor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BettingStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S1BettingStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S2BettingStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteAnalyticsUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/controller/DogFleaController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/model/DogFleaModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaControls.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaControls.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/DogFleaView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/dog_flea/presentation/view/component/ControlsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Enum" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -91,11 +96,11 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="org.example.core.domain.model.roulette.strategy" />
       <recent name="org.example.feature.dog_flea.presentation.view.component" />
       <recent name="org.example.feature.game_of_life.presentation.view.component" />
       <recent name="org.example.feature.game_of_life.presentation.view" />
       <recent name="org.example.feature.game_of_life.presentation.controller" />
-      <recent name="org.example.feature.game_of_life.presentation.model" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -125,7 +130,10 @@
       <workItem from="1760641872764" duration="178000" />
       <workItem from="1760968934724" duration="9105000" />
       <workItem from="1761405548422" duration="50387000" />
-      <workItem from="1761676295238" duration="603000" />
+      <workItem from="1761676295238" duration="6852000" />
+      <workItem from="1762109562143" duration="155000" />
+      <workItem from="1762109727570" duration="10685000" />
+      <workItem from="1762154678895" duration="7604000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -215,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761614713098</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add &quot;Go to Initial State&quot; functionality in Dog Flea simulation controls">
+      <option name="closed" value="true" />
+      <created>1761678913536</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1761678913536</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +260,11 @@
     <MESSAGE value="Integrate &quot;Dog Flea Simulation&quot; feature into the project: Added MVC components, core models, and navigation logic. Restructured &quot;Game of Life&quot; domain models." />
     <MESSAGE value="Restructure &quot;Dog Flea&quot; and &quot;Game of Life&quot; features: Adjust package structure, add MVC components, and improve view initialization." />
     <MESSAGE value="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components." />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhance &quot;Dog Flea Simulation&quot; feature: add controls wiring, refine model logic, introduce numeric input filters, and implement generation tracking components." />
+    <MESSAGE value="Add &quot;Go to Initial State&quot; functionality in Dog Flea simulation controls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Go to Initial State&quot; functionality in Dog Flea simulation controls" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

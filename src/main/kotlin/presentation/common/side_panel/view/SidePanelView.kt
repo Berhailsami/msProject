@@ -14,6 +14,7 @@ class SidePanelView : RoundedPanel(15) {
     val titleLabel = JLabel("Navigation")
     val gameOfLifeButton = JButton("Game of Life")
     val dogFleaButton = JButton("Dog Flea")
+    val rouletteButton = JButton("Roulette")
 
     init {
         layout = BoxLayout(this, BoxLayout.Y_AXIS)
@@ -24,5 +25,6 @@ class SidePanelView : RoundedPanel(15) {
         add(Box.createVerticalStrut(10))
         add(gameOfLifeButton)
         add(dogFleaButton)
+        add(rouletteButton)
     }
 }

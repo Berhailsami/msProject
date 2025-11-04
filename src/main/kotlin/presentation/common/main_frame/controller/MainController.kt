@@ -23,6 +23,11 @@ class MainController(
             navigationModel.setActiveScreen("DogFlea")
         }
 
+        mainFrame.sidePanelView.rouletteButton.addActionListener {
+            //--- When clicked, tell the MODEL to update ---
+            navigationModel.setActiveScreen("Roulette")
+        }
+
         //--- Set the initial state ---
         navigationModel.setActiveScreen("GameOfLife")
     }
