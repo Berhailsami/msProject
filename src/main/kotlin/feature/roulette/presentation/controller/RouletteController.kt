@@ -9,6 +9,7 @@ import org.example.feature.roulette.presentation.view.RouletteControls
 import org.example.feature.roulette.presentation.view.RouletteView
 import kotlinx.coroutines.*
 import org.example.core.domain.model.roulette.strategy.BettingStrategy
+import org.example.core.domain.use_case.RouletteApproximativeProbability
 import java.util.concurrent.atomic.LongAdder
 import javax.swing.SwingUtilities
 
@@ -16,7 +17,8 @@ class RouletteController(
     private val model: RouletteModel,
     private val view: RouletteView,
     private val rouletteUseCase: RouletteUseCase = RouletteUseCase(),
-    private val analyticsUseCase: RouletteAnalyticsUseCase = RouletteAnalyticsUseCase()
+    private val analyticsUseCase: RouletteAnalyticsUseCase = RouletteAnalyticsUseCase(),
+    private val approximAnalyticsUseCase: RouletteApproximativeProbability = RouletteApproximativeProbability()
 ) : RouletteControls {
     
     private var initialBalance: Int = 0
@@ -183,6 +185,12 @@ class RouletteController(
         if (strategy is S1BettingStrategy) {
             val betAmount = view.controlsView.betAmountField.text.toIntOrNull() ?: 1
             val probability = analyticsUseCase.calculateWinProbability(
+                initialBalance = initialBalance,
+                targetWinnings = targetWinnings,
+                betAmount = betAmount
+            )
+
+            val approximativeProbability = approximAnalyticsUseCase.calculateWinProbability(
                 initialBalance = initialBalance,
                 targetWinnings = targetWinnings,
                 betAmount = betAmount
