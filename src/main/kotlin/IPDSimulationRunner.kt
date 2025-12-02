@@ -85,16 +85,62 @@ fun main() {
         numTFTs = 25
     )
 
+    println("================================================================")
+    println("==== Extra Credit: Testing the TFTT Strategy ===")
+    println("================================================================")
 
+    println("Scenario 1: Balanced Environment (5 of each type, including TFTT)")
+    runAndAnalyze(
+        numCooperators = 5,
+        numDefectors = 5,
+        numRandoms = 5,
+        numTFTs = 5,
+        numTFTTs = 5
+    )
+
+    println("Scenario 2: Majority of Defectors (15 Defectors, 3 of each other type)")
+    runAndAnalyze(
+        numCooperators = 3,
+        numDefectors = 15,
+        numRandoms = 3,
+        numTFTs = 3,
+        numTFTTs = 3
+    )
+
+    println("Scenario 3: Majority of Cooperative types (10 Cooperators, 10 TFTs, 3 of each other)")
+    runAndAnalyze(
+        numCooperators = 10,
+        numDefectors = 3,
+        numRandoms = 3,
+        numTFTs = 3,
+        numTFTTs = 10
+    )
+
+    println("Scenario 4: Majority of Random players (15 Random, 3 of each other)")
+    runAndAnalyze(
+        numCooperators = 3,
+        numDefectors = 3,
+        numRandoms = 15,
+        numTFTs = 3,
+        numTFTTs = 3
+    )
 }
 
 fun runAndAnalyze(
     numCooperators: Int,
     numDefectors: Int,
     numRandoms: Int,
-    numTFTs: Int
+    numTFTs: Int,
+    numTFTTs: Int = 0
 ) {
-    val result = IteratedPrisonersDilemmaUseCase().invoke(numCooperators, numDefectors, numRandoms, numTFTs)
+    val result = IteratedPrisonersDilemmaUseCase()
+        .invoke(
+            numCooperators,
+            numDefectors,
+            numRandoms,
+            numTFTs,
+            numTFTTs
+        )
     println("Average Scores:")
     result.averageScores.entries.sortedByDescending{ score ->
         score.value

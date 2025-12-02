@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="test 2 in the lab">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Move.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Player.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Tournament.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/TournamentResult.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Cooperator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Defector.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/IPDStrategy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Random.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/TFT.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/TFTT.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/IteratedPrisonersDilemmaUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteApproximativeProbability.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="project 4">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +29,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -158,7 +144,7 @@
       <workItem from="1763481010973" duration="4566000" />
       <workItem from="1764073894139" duration="6858000" />
       <workItem from="1764288243532" duration="1292000" />
-      <workItem from="1764674028027" duration="869000" />
+      <workItem from="1764674028027" duration="2163000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -296,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762273056290</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="project 4">
+      <option name="closed" value="true" />
+      <created>1764674919314</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1764674919314</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +324,8 @@
     <MESSAGE value="Add &quot;Roulette&quot; feature: implement MVC components, game simulation logic, and probability calculations." />
     <MESSAGE value="test in the lab" />
     <MESSAGE value="test 2 in the lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 2 in the lab" />
+    <MESSAGE value="project 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="project 4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
