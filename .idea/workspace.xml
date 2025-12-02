@@ -4,18 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="test in the lab">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/BettingStrategy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/MartingaleBettingStrategy.kt" afterDir="false" />
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="test 2 in the lab">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Move.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Player.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/Tournament.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/TournamentResult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Cooperator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Defector.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/IPDStrategy.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Random.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/TFT.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/TFTT.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/IteratedPrisonersDilemmaUseCase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S1BettingStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/S1BettingStrategy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteUseCase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/RouletteControls.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/RouletteControls.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/ControlsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/ControlsView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/strategy/BoldPlayBettingStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteApproximativeProbability.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/view/component/StatisticsView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +35,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -69,11 +74,13 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.Build msProject.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.msProject [:IPDSimulationRunnerKt.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.msProject [:org.example.MainKt.main()].executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -96,12 +103,26 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="core.domain.model.iterated_prisoners_dilemma" />
       <recent name="org.example.core.domain.model.roulette.strategy" />
       <recent name="org.example.feature.dog_flea.presentation.view.component" />
       <recent name="org.example.feature.game_of_life.presentation.view.component" />
       <recent name="org.example.feature.game_of_life.presentation.view" />
-      <recent name="org.example.feature.game_of_life.presentation.controller" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="IPDSimulationRunnerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IPDSimulationRunnerKt" />
+      <module name="msProject.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.IPDSimulationRunnerKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -133,7 +154,11 @@
       <workItem from="1761676295238" duration="6852000" />
       <workItem from="1762109562143" duration="155000" />
       <workItem from="1762109727570" duration="10685000" />
-      <workItem from="1762154678895" duration="14004000" />
+      <workItem from="1762154678895" duration="17516000" />
+      <workItem from="1763481010973" duration="4566000" />
+      <workItem from="1764073894139" duration="6858000" />
+      <workItem from="1764288243532" duration="1292000" />
+      <workItem from="1764674028027" duration="869000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -263,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762271958720</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="test 2 in the lab">
+      <option name="closed" value="true" />
+      <created>1762273056290</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1762273056290</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +329,8 @@
     <MESSAGE value="Add &quot;Roulette&quot; feature: integrate MVC components, add navigation logic, betting strategies, and probability calculation." />
     <MESSAGE value="Add &quot;Roulette&quot; feature: implement MVC components, game simulation logic, and probability calculations." />
     <MESSAGE value="test in the lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="test in the lab" />
+    <MESSAGE value="test 2 in the lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 2 in the lab" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
