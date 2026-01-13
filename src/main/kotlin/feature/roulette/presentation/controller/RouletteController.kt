@@ -3,7 +3,7 @@ package org.example.feature.roulette.presentation.controller
 import org.example.core.domain.model.roulette.BetColor
 import org.example.core.domain.model.roulette.BettingStrategy
 import org.example.core.domain.model.roulette.strategy.S1BettingStrategy
-import org.example.core.domain.use_case.RouletteAnalyticsUseCase
+import core.domain.use_case.RouletteAnalyticsUseCase
 import org.example.core.domain.use_case.RouletteUseCase
 import org.example.feature.roulette.presentation.model.RouletteModel
 import org.example.feature.roulette.presentation.view.RouletteControls

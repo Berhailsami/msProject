@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="project 4">
+    <list default="true" id="52b4c073-9bca-4c0e-a493-4d6bcf4d149a" name="Changes" comment="project 4 v2">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/iterated_prisoners_dilemma/strategy/Punishement.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/IPDSimulationRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteGame.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteRound.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/model/roulette/RouletteRound.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/IteratedPrisonersDilemmaUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/IteratedPrisonersDilemmaUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteAnalyticsUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/core/domain/use_case/RouletteAnalyticsUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/controller/RouletteController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/feature/roulette/presentation/model/RouletteModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/main_frame/controller/MainController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/presentation/common/side_panel/view/SidePanelView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +33,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Enum" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -57,33 +69,34 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build msProject.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.msProject [:IPDSimulationRunnerKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.msProject [:org.example.MainKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build msProject.executor": "Run",
+    "Gradle.msProject [:IPDSimulationRunnerKt.main()].executor": "Run",
+    "Gradle.msProject [:MainKt.main()].executor": "Run",
+    "Gradle.msProject [:org.example.MainKt.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/sami/master/first_semester/modelling_and_simulation/msProject/src/main/kotlin/Main.kt",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -96,7 +109,7 @@
       <recent name="org.example.feature.game_of_life.presentation.view" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.MainKt (1)">
     <configuration name="IPDSimulationRunnerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IPDSimulationRunnerKt" />
       <module name="msProject.main" />
@@ -104,8 +117,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="msProject.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.MainKt" />
+      <module name="msProject.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.MainKt (1)" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.IPDSimulationRunnerKt" />
       </list>
     </recent_temporary>
@@ -144,7 +173,12 @@
       <workItem from="1763481010973" duration="4566000" />
       <workItem from="1764073894139" duration="6858000" />
       <workItem from="1764288243532" duration="1292000" />
-      <workItem from="1764674028027" duration="2163000" />
+      <workItem from="1764674028027" duration="23557000" />
+      <workItem from="1765485720182" duration="598000" />
+      <workItem from="1765487810463" duration="690000" />
+      <workItem from="1766345342988" duration="730000" />
+      <workItem from="1767897578145" duration="42000" />
+      <workItem from="1768140155007" duration="8360000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup with Gradle, Kotlin, and base MVC structure">
       <option name="closed" value="true" />
@@ -290,7 +324,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764674919314</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="project 4 v2">
+      <option name="closed" value="true" />
+      <created>1764676233109</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1764676233109</updated>
+    </task>
+    <task id="LOCAL-00020" summary="project 4 v2">
+      <option name="closed" value="true" />
+      <created>1764676554743</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1764676554743</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +375,8 @@
     <MESSAGE value="test in the lab" />
     <MESSAGE value="test 2 in the lab" />
     <MESSAGE value="project 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="project 4" />
+    <MESSAGE value="project 4 v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="project 4 v2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

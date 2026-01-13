@@ -81,3 +81,4 @@ class RouletteModel {
         this.game = this.game.copy(bettingStrategy = strategy)
     }
 }
+

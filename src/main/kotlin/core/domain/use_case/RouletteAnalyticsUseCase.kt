@@ -1,18 +1,9 @@
-package org.example.core.domain.use_case
+package core.domain.use_case
 
 import kotlin.math.pow
 
 class RouletteAnalyticsUseCase {
 
-    /**
-     * Calculates the probability of success in a roulette game using the Gambler's Ruin formula.
-     * This is only valid for a fixed bet strategy (S1).
-     *
-     * @param initialBalance The starting balance of the player.
-     * @param targetWinnings The amount of winnings the player wants to achieve.
-     * @param betAmount The fixed amount to bet in each round.
-     * @return The probability of reaching the target winnings before going bankrupt.
-     */
     fun calculateWinProbability(
         initialBalance: Int,
         targetWinnings: Int,

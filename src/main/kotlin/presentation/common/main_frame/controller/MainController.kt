@@ -28,6 +28,11 @@ class MainController(
             navigationModel.setActiveScreen("Roulette")
         }
 
+        mainFrame.sidePanelView.dfaButton.addActionListener {
+            //--- When clicked, tell the MODEL to update ---
+            navigationModel.setActiveScreen("DFA")
+        }
+
         //--- Set the initial state ---
         navigationModel.setActiveScreen("GameOfLife")
     }

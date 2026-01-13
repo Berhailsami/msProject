@@ -14,3 +14,4 @@ data class RouletteGame(
 ) {
     val totalRounds: Int get() = rounds.size
 }
+
